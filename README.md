@@ -2,10 +2,6 @@
 
 WibeSoft Teknik Değerlendirme Görevi
 
-## Açıklama
-
-Backend developer pozisyonu için hazırladığım e-ticaret API projesi. NestJS ve PostgreSQL kullanarak temel e-ticaret fonksiyonlarını içeren bir RESTful API geliştirdim.
-
 ## Özellikler
 
 **Temel Gereksinimler:**
@@ -109,26 +105,10 @@ src/
 
 ## Mimari Kararlar
 
-- Sepet için session kullandım (cookie bazlı, frontend entegrasyonu kolay)
-- Transaction ile sipariş oluşturma (veri tutarlılığı için)
-- Docker Compose ekledim (kolay kurulum için)
-- TypeORM synchronize development için true
+- Sepet için session kullandım 
+- Transaction ile sipariş oluşturma 
+- Docker Compose ekledim 
 
-## Environment Variables
-
-`.env` dosyası:
-```env
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-DATABASE_USER=postgres
-DATABASE_PASSWORD=postgres
-DATABASE_NAME=ecommerce_db
-
-JWT_SECRET=your-secret-key-change-in-production
-JWT_EXPIRATION=1d
-
-PORT=3000
-```
 
 ## Docker Komutları
 
@@ -145,6 +125,4 @@ docker-compose down
 
 ## Geliştirici
 
-Yiğit - WibeSoft Backend Developer Başvurusu
-
-Proje hakkında soru ya da öneriniz varsa iletişime geçebilirsiniz.
+Yiğit Çetin
