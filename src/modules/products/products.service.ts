@@ -33,7 +33,7 @@ export class ProductsService {
     return { data, total };
   }
 
-  async findOne(id: string): Promise<Product> {
+  async findOne(id: number): Promise<Product> {
     this.logger.log(`Fetching product with id: ${id}`);
     const product = await this.productRepository.findOne({ where: { id } });
     if (!product) {
@@ -42,20 +42,20 @@ export class ProductsService {
     return product;
   }
 
-  async update(id: string, updateProductDto: UpdateProductDto): Promise<Product> {
+  async update(id: number, updateProductDto: UpdateProductDto): Promise<Product> {
     this.logger.log(`Updating product with id: ${id}`);
     const product = await this.findOne(id);
     Object.assign(product, updateProductDto);
     return await this.productRepository.save(product);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: number): Promise<void> {
     this.logger.log(`Removing product with id: ${id}`);
     const product = await this.findOne(id);
     await this.productRepository.remove(product);
   }
 
-  async decreaseStock(id: string, quantity: number): Promise<void> {
+  async decreaseStock(id: number, quantity: number): Promise<void> {
     const product = await this.findOne(id);
     if (product.stock < quantity) {
       throw new BadRequestException(

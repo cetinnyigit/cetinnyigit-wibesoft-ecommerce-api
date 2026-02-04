@@ -100,7 +100,7 @@ export class CartService {
 
   async updateItem(
     sessionId: string,
-    productId: string,
+    productId: number,
     updateCartItemDto: UpdateCartItemDto,
   ): Promise<Cart> {
     this.logger.log(`Updating cart item for session: ${sessionId}`);
@@ -131,7 +131,7 @@ export class CartService {
     return await this.getCart(sessionId);
   }
 
-  async removeItem(sessionId: string, productId: string): Promise<Cart> {
+  async removeItem(sessionId: string, productId: number): Promise<Cart> {
     this.logger.log(`Removing item from cart for session: ${sessionId}`);
     
     const cart = await this.getOrCreateCart(sessionId);

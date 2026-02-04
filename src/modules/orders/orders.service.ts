@@ -117,7 +117,7 @@ export class OrdersService {
     return { data: orders };
   }
 
-  async findOne(id: string): Promise<Order> {
+  async findOne(id: number): Promise<Order> {
     this.logger.log(`Fetching order with id: ${id}`);
     const order = await this.orderRepository.findOne({
       where: { id },

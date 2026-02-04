@@ -49,7 +49,7 @@ export class AuthService {
     return await this.userRepository.save(user);
   }
 
-  async findById(id: string): Promise<User | null> {
+  async findById(id: number): Promise<User | null> {
     return await this.userRepository.findOne({ where: { id } });
   }
 }

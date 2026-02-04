@@ -5,11 +5,11 @@ import { Product } from '../../products/entities/product.entity';
 
 @Entity('order_items')
 export class OrderItem extends BaseEntity {
-  @Column({ type: 'uuid' })
-  orderId: string;
+  @Column({ type: 'int' })
+  orderId: number;
 
-  @Column({ type: 'uuid' })
-  productId: string;
+  @Column({ type: 'int' })
+  productId: number;
 
   @Column({ type: 'int' })
   quantity: number;

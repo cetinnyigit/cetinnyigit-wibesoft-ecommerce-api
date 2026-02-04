@@ -48,7 +48,7 @@ export class CartController {
   @ApiResponse({ status: 200, description: 'Cart item updated successfully' })
   @ApiResponse({ status: 404, description: 'Item not found in cart' })
   async updateItem(
-    @Param('productId') productId: string,
+    @Param('productId') productId: number,
     @Body() updateCartItemDto: UpdateCartItemDto,
     @Session() session: any,
   ) {
@@ -60,7 +60,7 @@ export class CartController {
   @ApiOperation({ summary: 'Remove item from cart' })
   @ApiResponse({ status: 200, description: 'Item removed from cart successfully' })
   @ApiResponse({ status: 404, description: 'Item not found in cart' })
-  async removeItem(@Param('productId') productId: string, @Session() session: any) {
+  async removeItem(@Param('productId') productId: number, @Session() session: any) {
     const sessionId = session.id || 'default-session';
     return await this.cartService.removeItem(sessionId, productId);
   }
